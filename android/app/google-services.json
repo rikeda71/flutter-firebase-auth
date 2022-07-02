@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "514826886102",
+    "project_id": "shikoku-ohenro",
+    "storage_bucket": "shikoku-ohenro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514826886102:android:e6e7544490c446b1f12277",
+        "android_client_info": {
+          "package_name": "com.example.flutter_firebase_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514826886102-3jsoe6puesma68oedeucdicu21rjlv8s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqsGwv5FIlgQajuBM2tJzaSkBIVPy_hBw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514826886102-3jsoe6puesma68oedeucdicu21rjlv8s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "514826886102-7vub50d72pi3qgknd5g1tsfjcpltk06b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterFirebaseAuth"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
