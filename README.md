@@ -1,16 +1,10 @@
 # flutter_firebase_auth
 
-A new Flutter project.
+flutter + firebase-auth のサンプルプロジェクト
 
-## Getting Started
+## 注意すべき点
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- iOS であれば、GoogleService-Info.plist, Android であれば、google-services.json をプロジェクト配下に含める必要がある
+  - これらは Firebase 用の設定ファイル
+  - また、iOS については、 `info.plist` に情報を追記する必要もある
+  - 環境変数の使い分けについては [FlutterでDart-defineのみを使って開発環境と本番環境を分ける](https://zenn.dev/riscait/articles/separating-environments-in-flutter) などが参考になる
