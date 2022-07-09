@@ -4,11 +4,28 @@ import 'package:flutter_firebase_auth/domain/profile/profile.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRepositoryImpl extends AuthRepository {
-  final _auth = FirebaseAuth.instance;
+  AuthRepositoryImpl(this._auth);
+
+  final FirebaseAuth _auth;
   final _googleSignin = GoogleSignIn();
 
   @override
   Future<Profile?> signin() async {
+    User? user = _auth.currentUser != null
+        ? _auth.currentUser!
+        : await _signInInternal();
+    if (user != null) {
+      final profile = Profile(
+          displayName: user.displayName!,
+          email: user.email!,
+          phoneNumber: user.phoneNumber != null ? user.phoneNumber! : '',
+          photoUrl: user.photoURL != null ? user.photoURL! : '');
+      return profile;
+    }
+    return null;
+  }
+
+  Future<User?> _signInInternal() async {
     try {
       GoogleSignInAccount? googleSigninAccount = await _googleSignin.signIn();
       if (googleSigninAccount != null) {
@@ -23,16 +40,8 @@ class AuthRepositoryImpl extends AuthRepository {
             await _auth.signInWithCredential(credential);
 
         final user = userCredential.user;
-        if (user != null) {
-          final profile = Profile(
-              displayName: user.displayName!,
-              email: user.email!,
-              phoneNumber: user.phoneNumber != null ? user.phoneNumber! : '',
-              photoUrl: user.photoURL != null ? user.photoURL! : '');
-          return profile;
-        }
+        return user;
       }
-      return null;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'account-exists-with-differenct-credentials') {
         // handle error
