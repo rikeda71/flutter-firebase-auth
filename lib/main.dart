@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
               title: 'Firebase Auth App',
               theme: ThemeData(
                 primarySwatch: Colors.blue,
+                primaryColor: Colors.blueAccent,
+                visualDensity: VisualDensity.adaptivePlatformDensity,
+                buttonTheme: const ButtonThemeData(),
               ),
               home: const LoginPage(),
               routes: <String, WidgetBuilder>{
