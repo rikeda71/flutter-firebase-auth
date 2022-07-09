@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_firebase_auth/login.dart';
+import 'package:flutter_firebase_auth/ui/pages/profile/profile_page.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'firebase_options.dart';
+import 'ui/pages/login/login_page.dart';
 
 Future<void> main() async {
-  runApp(const MyApp());
+  runApp(const ProviderScope(
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -29,6 +33,10 @@ class MyApp extends StatelessWidget {
                 primarySwatch: Colors.blue,
               ),
               home: const LoginPage(),
+              routes: <String, WidgetBuilder>{
+                '/login': (context) => const LoginPage(),
+                '/profile': (context) => const ProfilePage(),
+              },
             );
           }
 
