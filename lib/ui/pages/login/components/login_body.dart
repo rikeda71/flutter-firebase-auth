@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_auth/domain/auth/auth_state_provider.dart';
+import 'package:flutter_firebase_auth/di/auth.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class LoginBody extends HookConsumerWidget {
@@ -13,7 +13,7 @@ class LoginBody extends HookConsumerWidget {
   }
 
   Widget _buildButton(BuildContext context, WidgetRef ref) {
-    final notifier = ref.watch(authStateNotifier.notifier);
+    final notifier = ref.watch(authStateNotifierProvider.notifier);
 
     void onPressed() async {
       notifier.signIn().whenComplete(() {

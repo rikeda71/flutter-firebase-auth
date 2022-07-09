@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_firebase_auth/domain/auth/auth_state_provider.dart';
+import 'package:flutter_firebase_auth/di/auth.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ProfilePageBody extends HookConsumerWidget {
@@ -11,7 +11,8 @@ class ProfilePageBody extends HookConsumerWidget {
   }
 
   Widget _buildContents(BuildContext context, WidgetRef ref) {
-    final profile = ref.watch(authStateNotifier.select((value) => value));
+    final profile =
+        ref.watch(authStateNotifierProvider.select((value) => value));
 
     return Scaffold(
       key: const Key('profile'),

@@ -2,9 +2,7 @@ import 'package:flutter_firebase_auth/domain/auth/auth_repository.dart';
 import 'package:flutter_firebase_auth/domain/profile/profile.dart';
 
 class AuthUsecase {
-  AuthUsecase({
-    required AuthRepository authRepository,
-  }) : _authRepository = authRepository;
+  AuthUsecase(this._authRepository);
 
   final AuthRepository _authRepository;
 
