@@ -20,6 +20,7 @@ mixin _$Profile {
   String get email => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get photoUrl => throw _privateConstructorUsedError;
+  Steps get steps => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProfileCopyWith<Profile> get copyWith => throw _privateConstructorUsedError;
@@ -30,7 +31,13 @@ abstract class $ProfileCopyWith<$Res> {
   factory $ProfileCopyWith(Profile value, $Res Function(Profile) then) =
       _$ProfileCopyWithImpl<$Res>;
   $Res call(
-      {String displayName, String email, String phoneNumber, String photoUrl});
+      {String displayName,
+      String email,
+      String phoneNumber,
+      String photoUrl,
+      Steps steps});
+
+  $StepsCopyWith<$Res> get steps;
 }
 
 /// @nodoc
@@ -47,6 +54,7 @@ class _$ProfileCopyWithImpl<$Res> implements $ProfileCopyWith<$Res> {
     Object? email = freezed,
     Object? phoneNumber = freezed,
     Object? photoUrl = freezed,
+    Object? steps = freezed,
   }) {
     return _then(_value.copyWith(
       displayName: displayName == freezed
@@ -65,7 +73,18 @@ class _$ProfileCopyWithImpl<$Res> implements $ProfileCopyWith<$Res> {
           ? _value.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      steps: steps == freezed
+          ? _value.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as Steps,
     ));
+  }
+
+  @override
+  $StepsCopyWith<$Res> get steps {
+    return $StepsCopyWith<$Res>(_value.steps, (value) {
+      return _then(_value.copyWith(steps: value));
+    });
   }
 }
 
@@ -76,7 +95,14 @@ abstract class _$$_ProfileCopyWith<$Res> implements $ProfileCopyWith<$Res> {
       __$$_ProfileCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String displayName, String email, String phoneNumber, String photoUrl});
+      {String displayName,
+      String email,
+      String phoneNumber,
+      String photoUrl,
+      Steps steps});
+
+  @override
+  $StepsCopyWith<$Res> get steps;
 }
 
 /// @nodoc
@@ -94,6 +120,7 @@ class __$$_ProfileCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res>
     Object? email = freezed,
     Object? phoneNumber = freezed,
     Object? photoUrl = freezed,
+    Object? steps = freezed,
   }) {
     return _then(_$_Profile(
       displayName: displayName == freezed
@@ -112,18 +139,24 @@ class __$$_ProfileCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res>
           ? _value.photoUrl
           : photoUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      steps: steps == freezed
+          ? _value.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as Steps,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Profile with DiagnosticableTreeMixin implements _Profile {
+class _$_Profile extends _Profile {
   const _$_Profile(
       {required this.displayName,
       required this.email,
       required this.phoneNumber,
-      required this.photoUrl});
+      required this.photoUrl,
+      required this.steps})
+      : super._();
 
   @override
   final String displayName;
@@ -133,21 +166,12 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
   final String phoneNumber;
   @override
   final String photoUrl;
+  @override
+  final Steps steps;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Profile(displayName: $displayName, email: $email, phoneNumber: $phoneNumber, photoUrl: $photoUrl)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'Profile'))
-      ..add(DiagnosticsProperty('displayName', displayName))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('photoUrl', photoUrl));
+  String toString() {
+    return 'Profile(displayName: $displayName, email: $email, phoneNumber: $phoneNumber, photoUrl: $photoUrl, steps: $steps)';
   }
 
   @override
@@ -160,7 +184,8 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
-            const DeepCollectionEquality().equals(other.photoUrl, photoUrl));
+            const DeepCollectionEquality().equals(other.photoUrl, photoUrl) &&
+            const DeepCollectionEquality().equals(other.steps, steps));
   }
 
   @override
@@ -169,7 +194,8 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
       const DeepCollectionEquality().hash(displayName),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(phoneNumber),
-      const DeepCollectionEquality().hash(photoUrl));
+      const DeepCollectionEquality().hash(photoUrl),
+      const DeepCollectionEquality().hash(steps));
 
   @JsonKey(ignore: true)
   @override
@@ -177,12 +203,14 @@ class _$_Profile with DiagnosticableTreeMixin implements _Profile {
       __$$_ProfileCopyWithImpl<_$_Profile>(this, _$identity);
 }
 
-abstract class _Profile implements Profile {
+abstract class _Profile extends Profile {
   const factory _Profile(
       {required final String displayName,
       required final String email,
       required final String phoneNumber,
-      required final String photoUrl}) = _$_Profile;
+      required final String photoUrl,
+      required final Steps steps}) = _$_Profile;
+  const _Profile._() : super._();
 
   @override
   String get displayName => throw _privateConstructorUsedError;
@@ -192,6 +220,8 @@ abstract class _Profile implements Profile {
   String get phoneNumber => throw _privateConstructorUsedError;
   @override
   String get photoUrl => throw _privateConstructorUsedError;
+  @override
+  Steps get steps => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProfileCopyWith<_$_Profile> get copyWith =>
