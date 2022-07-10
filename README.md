@@ -22,3 +22,5 @@ flutter + firebase-auth のサンプルプロジェクト
 ### Health
 
 - [health](https://pub.dev/packages/health) パッケージの説明順の作業を実行する必要がある
+  - iOS
+    - https://developer.apple.com/documentation/healthkit/setting_up_healthkit も参考にする必要がある
