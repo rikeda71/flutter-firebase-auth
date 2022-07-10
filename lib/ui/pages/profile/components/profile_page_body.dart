@@ -32,6 +32,7 @@ class ProfilePageBody extends HookConsumerWidget {
                   Text('name: ${profile.displayName}'),
                   Text('email: ${profile.email}'),
                   Text('phoneNumber: ${profile.phoneNumber}'),
+                  Text('昨日の歩数: ${profile.steps.count}'),
                 ],
               ),
             )
