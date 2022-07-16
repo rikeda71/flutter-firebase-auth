@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_firebase_auth/domain/auth/auth_repository.dart';
+import 'package:flutter_firebase_auth/domain/profile/health/steps.dart';
 import 'package:flutter_firebase_auth/domain/profile/profile.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -16,10 +17,12 @@ class AuthRepositoryImpl extends AuthRepository {
         : await _signInInternal();
     if (user != null) {
       final profile = Profile(
-          displayName: user.displayName!,
-          email: user.email!,
-          phoneNumber: user.phoneNumber != null ? user.phoneNumber! : '',
-          photoUrl: user.photoURL != null ? user.photoURL! : '');
+        displayName: user.displayName!,
+        email: user.email!,
+        phoneNumber: user.phoneNumber != null ? user.phoneNumber! : '',
+        photoUrl: user.photoURL != null ? user.photoURL! : '',
+        steps: const Steps(count: 0),
+      );
       return profile;
     }
     return null;

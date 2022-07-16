@@ -1,4 +1,5 @@
 import 'package:flutter_firebase_auth/domain/auth/auth_usecase.dart';
+import 'package:flutter_firebase_auth/domain/profile/health/steps.dart';
 import 'package:flutter_firebase_auth/domain/profile/profile.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -8,7 +9,12 @@ class AuthStateNotifier extends StateNotifier<Profile> {
 
   AuthStateNotifier(this.ref, this._authUsecase)
       : super(const Profile(
-            displayName: '', email: '', phoneNumber: '', photoUrl: ''));
+          displayName: '',
+          email: '',
+          phoneNumber: '',
+          photoUrl: '',
+          steps: Steps(count: 0),
+        ));
 
   Future<void> signIn() async {
     final profile = await _authUsecase.signIn();
