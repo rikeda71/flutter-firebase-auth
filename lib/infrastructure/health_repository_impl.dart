@@ -18,8 +18,9 @@ class HealthRepositoryImpl implements HealthRepository {
     if (!requested) {
       return const Steps(count: 0);
     }
-    int? steps = await _healthFactory.getTotalStepsInInterval(now.subtract(const Duration(days: 1)), now);
-    int count = steps ?? 0;
+    int? steps = await _healthFactory.getTotalStepsInInterval(
+        now.subtract(const Duration(days: 1)), now);
+    int count = steps ?? 100;
     return Steps(count: count);
   }
 }
