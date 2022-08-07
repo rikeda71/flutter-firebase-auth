@@ -14,8 +14,7 @@ class AuthUsecase {
     if (profile == null) {
       return profile;
     }
-    final steps = await _healthRepository.getSteps();
-    profile.setStepCount(steps);
-    return profile;
+    final steps = await _healthRepository.getSteps(profile.uid);
+    return profile.setStepCount(steps);
   }
 }
