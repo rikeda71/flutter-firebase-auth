@@ -9,6 +9,7 @@ class AuthStateNotifier extends StateNotifier<Profile> {
 
   AuthStateNotifier(this.ref, this._authUsecase)
       : super(const Profile(
+          uid: '',
           displayName: '',
           email: '',
           phoneNumber: '',

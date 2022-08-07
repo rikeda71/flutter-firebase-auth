@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '514826886102',
     projectId: 'shikoku-ohenro',
     storageBucket: 'shikoku-ohenro.appspot.com',
+    androidClientId: '514826886102-q324o6fsalf6j49nv17b9254tiuqg592.apps.googleusercontent.com',
     iosClientId: '514826886102-7vub50d72pi3qgknd5g1tsfjcpltk06b.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterFirebaseAuth',
   );

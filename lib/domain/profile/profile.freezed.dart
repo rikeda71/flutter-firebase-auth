@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Profile {
+  String get uid => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
@@ -31,7 +32,8 @@ abstract class $ProfileCopyWith<$Res> {
   factory $ProfileCopyWith(Profile value, $Res Function(Profile) then) =
       _$ProfileCopyWithImpl<$Res>;
   $Res call(
-      {String displayName,
+      {String uid,
+      String displayName,
       String email,
       String phoneNumber,
       String photoUrl,
@@ -50,6 +52,7 @@ class _$ProfileCopyWithImpl<$Res> implements $ProfileCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? uid = freezed,
     Object? displayName = freezed,
     Object? email = freezed,
     Object? phoneNumber = freezed,
@@ -57,6 +60,10 @@ class _$ProfileCopyWithImpl<$Res> implements $ProfileCopyWith<$Res> {
     Object? steps = freezed,
   }) {
     return _then(_value.copyWith(
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       displayName: displayName == freezed
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -95,7 +102,8 @@ abstract class _$$_ProfileCopyWith<$Res> implements $ProfileCopyWith<$Res> {
       __$$_ProfileCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String displayName,
+      {String uid,
+      String displayName,
       String email,
       String phoneNumber,
       String photoUrl,
@@ -116,6 +124,7 @@ class __$$_ProfileCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? uid = freezed,
     Object? displayName = freezed,
     Object? email = freezed,
     Object? phoneNumber = freezed,
@@ -123,6 +132,10 @@ class __$$_ProfileCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res>
     Object? steps = freezed,
   }) {
     return _then(_$_Profile(
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
       displayName: displayName == freezed
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -151,13 +164,16 @@ class __$$_ProfileCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res>
 
 class _$_Profile extends _Profile {
   const _$_Profile(
-      {required this.displayName,
+      {required this.uid,
+      required this.displayName,
       required this.email,
       required this.phoneNumber,
       required this.photoUrl,
       required this.steps})
       : super._();
 
+  @override
+  final String uid;
   @override
   final String displayName;
   @override
@@ -171,7 +187,7 @@ class _$_Profile extends _Profile {
 
   @override
   String toString() {
-    return 'Profile(displayName: $displayName, email: $email, phoneNumber: $phoneNumber, photoUrl: $photoUrl, steps: $steps)';
+    return 'Profile(uid: $uid, displayName: $displayName, email: $email, phoneNumber: $phoneNumber, photoUrl: $photoUrl, steps: $steps)';
   }
 
   @override
@@ -179,6 +195,7 @@ class _$_Profile extends _Profile {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Profile &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality()
                 .equals(other.displayName, displayName) &&
             const DeepCollectionEquality().equals(other.email, email) &&
@@ -191,6 +208,7 @@ class _$_Profile extends _Profile {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(uid),
       const DeepCollectionEquality().hash(displayName),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(phoneNumber),
@@ -205,13 +223,16 @@ class _$_Profile extends _Profile {
 
 abstract class _Profile extends Profile {
   const factory _Profile(
-      {required final String displayName,
+      {required final String uid,
+      required final String displayName,
       required final String email,
       required final String phoneNumber,
       required final String photoUrl,
       required final Steps steps}) = _$_Profile;
   const _Profile._() : super._();
 
+  @override
+  String get uid => throw _privateConstructorUsedError;
   @override
   String get displayName => throw _privateConstructorUsedError;
   @override

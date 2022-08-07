@@ -8,6 +8,7 @@ class Profile with _$Profile {
   const Profile._();
 
   const factory Profile({
+    required String uid,
     required String displayName,
     required String email,
     required String phoneNumber,
