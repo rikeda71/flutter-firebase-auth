@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
 
   # firebase
-  firebase_core: ^1.19.1
+  firebase_core: ^1.20.0  # https://stackoverflow.com/questions/73073196/how-do-i-fix-my-flutter-app-not-building-with-cloud-firestore
   firebase_auth: ^3.4.1
   google_sign_in: ^5.3.3
 
@@ -48,6 +48,10 @@ dependencies:
   freezed_annotation: ^2.0.3
   flutter_signin_button: ^2.0.0
   health: ^4.1.1
+  cloud_firestore: ^3.4.0
+
+  # utilities
+  permission_handler: ^10.0.0
 
 dev_dependencies:
   flutter_test:
